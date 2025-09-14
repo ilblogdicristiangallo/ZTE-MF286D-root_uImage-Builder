@@ -56,14 +56,19 @@ sudo apt update
 sudo apt install binwalk mtd-utils ubireader
 
 # Execute 
-chmod +x build_root_uImage.sh
+<pre>chmod +x build_root_uImage.sh</pre>
 
-./build_root_uImage.sh
+<pre>./build_root_uImage.sh</pre>
 
-# 📤 Deployment with ZTE_Sales_Update_Framework.exe
-Once the root_uImage.new file has been successfully created, it must be placed inside the UPDATE folder used by ZTE_Sales_Update_Framework.exe — the official ZTE flashing tool available online.
+# 📤 How to Deploy with ZTE_Sales_Update_Framework.exe
+After generating the root_uImage.new file, you must rename it to root_uImage (without the .new extension) to match the expected filename used by ZTE’s flashing tool.
 
-This folder is typically part of the firmware update package provided by ZTE. By replacing the original root_uImage with your custom root_uImage.new, the tool will flash your modified OpenWrt image onto the device, assuming compatibility with the target model.
+Then, place the renamed file inside the UPDATE folder of the firmware package used by ZTE_Sales_Update_Framework.exe.
+
+For example, the correct path might look like:
+<pre>C:\Users\YourUsername\Desktop\zte mf286d Nordic to OPENWRT\UPDATE\
+</pre>
+
 
 # ⚠️ Make sure the filename remains exactly root_uImage (without .new) when placing it in the UPDATE folder, unless the tool or device expects a different name.
 
